@@ -10,28 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
     
     private var collectionView: UICollectionView!
-    enum Section: CaseIterable{
-        case topCategories
-        case topWideBanner
-        case weeklySelection
-        case ads
-        case topProducts
-        
-        var sectionTitle: String {
-            switch self {
-            case .topCategories:
-                "7C Categories"
-            case .topWideBanner:
-                ""
-            case .weeklySelection:
-                "Weekly Selection"
-            case .ads:
-                ""
-            case .topProducts:
-                "Top Products"
-            }
-        }
-    }
+    
     var categoriesArr = ["Office Furniture", "Chair", "Desk", "Beds", "Room"]
     
     override func viewDidLoad() {
@@ -136,68 +115,42 @@ extension HomeViewController {
             let sectionLayoutKind = Section.allCases[sectionIndex]
             switch (sectionLayoutKind) {
             case .topCategories:
-                return generateTopCategoriesLayout()
+                return TopCategoriesSection()
             case .topWideBanner:
-                return generateTopBannersLayout()
+                return TopBannerSection()
             case .weeklySelection:
-                return generateGroupedProductLayout()
+                return ProductLayoutSection()
             case .ads:
-                return generateTopBannersLayout()
+                return TopBannerSection()
             case .topProducts:
-                return generateGroupedProductLayout()
+                return ProductLayoutSection()
             }
         }
         return layout
     }
-    func generateTopCategoriesLayout() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(117), heightDimension: .absolute(80))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 1)
-        let headerSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .estimated(44))
-        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
-            layoutSize: headerSize,
-            elementKind: UICollectionView.elementKindSectionHeader,
-            alignment: .top)
+}
+
+extension HomeViewController {
+    enum Section: CaseIterable{
+        case topCategories
+        case topWideBanner
+        case weeklySelection
+        case ads
+        case topProducts
         
-        let section = NSCollectionLayoutSection(group: group)
-        section.boundarySupplementaryItems = [sectionHeader]
-        section.orthogonalScrollingBehavior = .continuous
-        section.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-        return section
+        var sectionTitle: String {
+            switch self {
+            case .topCategories:
+                "7C Categories"
+            case .topWideBanner:
+                ""
+            case .weeklySelection:
+                "Weekly Selection"
+            case .ads:
+                ""
+            case .topProducts:
+                "Top Products"
+            }
+        }
     }
-    func generateTopBannersLayout() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(200))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 1)
-        group.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-        
-        let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = .init(top: 24, leading: 0, bottom: 0, trailing: 0)
-        section.orthogonalScrollingBehavior = .groupPagingCentered
-        return section
-    }
-    func generateGroupedProductLayout() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(1.0))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 15, trailing: 5)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(256))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 2)
-        let headerSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .estimated(44))
-        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
-            layoutSize: headerSize,
-            elementKind: UICollectionView.elementKindSectionHeader,
-            alignment: .top)
-        
-        let section = NSCollectionLayoutSection(group: group)
-        section.boundarySupplementaryItems = [sectionHeader]
-        return section
-    }
-    
 }
