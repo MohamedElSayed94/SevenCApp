@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ProductCell: UICollectionViewCell {
     // MARK: - View Component
@@ -20,7 +21,8 @@ class ProductCell: UICollectionViewCell {
         label.font = DesignSystem.Font.regular14.font
         label.textColor = DesignSystem.Color.black3.color
         label.textAlignment = .left
-        label.numberOfLines = 1
+        label.numberOfLines = 2
+        label.lineBreakMode = .byWordWrapping
         return label
     }()
     private var priceStackView: UIStackView = {
@@ -57,27 +59,28 @@ class ProductCell: UICollectionViewCell {
 
 extension ProductCell {
     
-    func configureUI(imageName: String, title: String, isDiscounted: String, price: String, priceOffer: String){
-        imageView.image = UIImage(named: imageName)
-        titleLabel.text = title
+    func configureUI(model: HomeModel.Product){
+        let url = URL(string: model.image)
+        imageView.kf.setImage(with: url)
+        titleLabel.text = model.name
         
-        let attributeString: NSMutableAttributedString = NSMutableAttributedString(string: price)
+        let attributeString: NSMutableAttributedString = NSMutableAttributedString(string: model.price)
         attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSRange(location: 0, length: attributeString.length))
         priceLabel.attributedText = attributeString
-        offerPriceLabel.text = priceOffer
+        offerPriceLabel.text = model.priceOffer
         
         addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         imageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         imageView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        
+        imageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.78).isActive = true
         addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        titleLabel.heightAnchor.constraint(equalToConstant: 21).isActive = true
+        
         
         addSubview(priceStackView)
         priceStackView.addArrangedSubview(priceLabel)

@@ -94,33 +94,36 @@ extension HomeViewController: UICollectionViewDataSource {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(CategoryThumbnailCell.self)", for: indexPath) as? CategoryThumbnailCell else {
                 return UICollectionViewCell()
             }
-            cell.configureUI(imageName: "WeeklySelection1", title: viewModel.model.categories[indexPath.item].name)
+            let category = viewModel.model.categories[indexPath.item]
+            cell.configureUI(model: category)
             return cell
         case .slider:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(CategoryThumbnailCell.self)", for: indexPath) as? CategoryThumbnailCell else {
                 return UICollectionViewCell()
             }
-            cell.configureUI(imageName: "Rectangle5", title: "")
+            let slider = viewModel.model.slider[indexPath.item]
+            cell.configureUI(model: slider)
             return cell
         case .weeklySelection:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(ProductCell.self)", for: indexPath) as? ProductCell else {
                 return UICollectionViewCell()
             }
             let weeklyProduct = viewModel.model.weeklyProducts[indexPath.item]
-            cell.configureUI(imageName: "WeeklySelection1", title: weeklyProduct.name, isDiscounted: weeklyProduct.offer, price: weeklyProduct.price, priceOffer: weeklyProduct.priceOffer ?? "")
+            cell.configureUI(model: weeklyProduct)
             return cell
         case .ads:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(CategoryThumbnailCell.self)", for: indexPath) as? CategoryThumbnailCell else {
                 return UICollectionViewCell()
             }
-            cell.configureUI(imageName: "addBanner", title: "")
+            let ads = viewModel.model.ads[indexPath.item]
+            cell.configureUI(model: ads)
             return cell
         case .topProducts:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(ProductCell.self)", for: indexPath) as? ProductCell else {
                 return UICollectionViewCell()
             }
-            let topProduct = viewModel.model.weeklyProducts[indexPath.item]
-            cell.configureUI(imageName: "WeeklySelection1", title: topProduct.name, isDiscounted: topProduct.offer, price: topProduct.price, priceOffer: topProduct.priceOffer ?? "")
+            let topProduct = viewModel.model.topProducts[indexPath.item]
+            cell.configureUI(model: topProduct)
             return cell
         }
     }

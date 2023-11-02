@@ -17,7 +17,7 @@ class CategoryThumbnailCell: UICollectionViewCell {
     }()
     private var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = DesignSystem.Font.regular14.font
+        label.font = DesignSystem.Font.bold14.font
         label.textColor = DesignSystem.Color.white.color
         label.textAlignment = .center
         label.numberOfLines = 2
@@ -29,9 +29,10 @@ class CategoryThumbnailCell: UICollectionViewCell {
 
 extension CategoryThumbnailCell {
     
-    func configureUI(imageName: String, title: String){
-        imageView.image = UIImage(named: imageName)
-        titleLabel.text = title
+    func configureUI(model: HomeModel.HomeItem){
+        let url = URL(string: model.image)
+        imageView.kf.setImage(with: url)
+        titleLabel.text = model.name
         addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.topAnchor.constraint(equalTo: topAnchor).isActive = true

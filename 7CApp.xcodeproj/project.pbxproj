@@ -35,6 +35,7 @@
 		FA19F4C52AF361AB00BA0952 /* FailableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4C42AF361AB00BA0952 /* FailableProtocol.swift */; };
 		FA19F4C72AF363BE00BA0952 /* LoadableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4C62AF363BE00BA0952 /* LoadableProtocol.swift */; };
 		FA19F4CA2AF3643D00BA0952 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4C92AF3643C00BA0952 /* SpinnerViewController.swift */; };
+		FA19F4CD2AF376E900BA0952 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = FA19F4CC2AF376E900BA0952 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA19F4CD2AF376E900BA0952 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +247,9 @@
 			dependencies = (
 			);
 			name = 7CApp;
+			packageProductDependencies = (
+				FA19F4CC2AF376E900BA0952 /* Kingfisher */,
+			);
 			productName = 7CApp;
 			productReference = FA19F4582AF1AEE600BA0952 /* 7CApp.app */;
 			productType = "com.apple.product-type.application";
@@ -273,6 +278,9 @@
 				Base,
 			);
 			mainGroup = FA19F44F2AF1AEE600BA0952;
+			packageReferences = (
+				FA19F4CB2AF376E900BA0952 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = FA19F4592AF1AEE600BA0952 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -535,6 +543,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FA19F4CB2AF376E900BA0952 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = exactVersion;
+				version = 7.10.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FA19F4CC2AF376E900BA0952 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA19F4CB2AF376E900BA0952 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FA19F4502AF1AEE600BA0952 /* Project object */;
 }

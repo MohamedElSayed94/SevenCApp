@@ -23,7 +23,7 @@ class ProductLayoutSection: NSCollectionLayoutSection {
             layoutSize: headerSize,
             elementKind: UICollectionView.elementKindSectionHeader,
             alignment: .top)
-                
+        sectionHeader.pinToVisibleBounds = true
         self.init(group: group)
         boundarySupplementaryItems = [sectionHeader]
     }
