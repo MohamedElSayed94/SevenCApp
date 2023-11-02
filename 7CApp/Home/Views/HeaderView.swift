@@ -10,7 +10,17 @@ import UIKit
 
 class HeaderView: UICollectionReusableView {
     
-    let label = UILabel()
+    let label: UILabel = {
+        let label = UILabel()
+        label.font = DesignSystem.Font.bold13.font
+        label.textColor = DesignSystem.Color.black1.color
+        return label
+    }()
+    private var seeAllButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "arrow-left"), for: .normal)
+        return button
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,7 +47,10 @@ extension HeaderView {
             label.topAnchor.constraint(equalTo: topAnchor, constant: inset),
             label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -inset)
         ])
-        label.font = DesignSystem.Font.bold13.font
-        label.textColor = DesignSystem.Color.black1.color
+        
+        addSubview(seeAllButton)
+        seeAllButton.translatesAutoresizingMaskIntoConstraints = false
+        seeAllButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24).isActive = true
+        seeAllButton.centerYAnchor.constraint(equalTo: label.centerYAnchor).isActive = true
     }
 }

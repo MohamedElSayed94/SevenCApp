@@ -32,6 +32,11 @@ class HomeViewController: UIViewController {
         configureCollectionView()
         collectionView.reloadData()
         viewModel.fetchHome()
+        configureStateListner()
+        configureNavBar()
+    }
+    
+    func configureStateListner() {
         viewModel.state.sink { [weak self] state in
             guard let self else { return }
             switch state {
@@ -49,7 +54,12 @@ class HomeViewController: UIViewController {
         }
         .store(in: &cancellable)
     }
-
+    
+    func configureNavBar() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "IconSearch")?.withRenderingMode(.alwaysOriginal))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "Alert")?.withRenderingMode(.alwaysOriginal))
+        self.navigationItem.titleView = UIImageView(image: UIImage(named:"7CTitle")?.withRenderingMode(.alwaysOriginal))
+    }
 }
 
 
