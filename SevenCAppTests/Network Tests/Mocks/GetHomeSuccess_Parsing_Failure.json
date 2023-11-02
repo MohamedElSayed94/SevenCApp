@@ -1,0 +1,156 @@
+{
+    "status": 1,
+    "message": "Home Screen",
+    "data": {
+        "not_count": 0,
+        "slider": [
+            {
+                "id": 2,
+                "name": "Best Quality Products, Life Long Standing",
+                "image": "https://codexkw.co/7c/upload/slider/AWbFg.360_F_466253361_c4fAjCqVZD4L2boH8vfqjUbUYk0wLcP7.jpg",
+                "link": "brand",
+                "category_id": 0,
+                "product_id": 0,
+                "brand_id": 1
+            },
+            {
+                "id": 3,
+                "name": "Slider 1",
+                "image": "https://codexkw.co/7c/upload/slider/trE0Q.World-Furniture-Online_19.jpg",
+                "link": "none",
+                "category_id": 0,
+                "product_id": 0,
+                "brand_id": 0
+            },
+            {
+                "id": 4,
+                "name": "Slider 2",
+                "image": "https://codexkw.co/7c/upload/slider/aLco7.f (2).jpg",
+                "link": "none",
+                "category_id": 0,
+                "product_id": 0,
+                "brand_id": 0
+            }
+        ],
+        "categories": [
+            {
+                "id": 1,
+                "name": "Office",
+                "image": "https://codexkw.co/7c/upload/categories/tHFLQ.images.jpg"
+            },
+            {
+                "id": 5,
+                "name": "Woods",
+                "image": "https://codexkw.co/7c/upload/categories/DTn50.sub-buzz-2246-1594301760-5.jpg"
+            },
+            {
+                "id": 6,
+                "name": "Colored Wood",
+                "image": "https://codexkw.co/7c/upload/categories/KbqUF.MicrosoftTeams-image (7).png"
+            },
+            {
+                "id": 18,
+                "name": "Printers",
+                "image": "https://codexkw.co/7c/upload/categories/VfQF1.حقهىفثق.jpg"
+            },
+            {
+                "id": 16,
+                "name": "Chairs",
+                "image": "https://codexkw.co/7c/upload/categories/lfVuv.Furniture_Website_Category_Icon_0008_Sofas.jpg"
+            },
+            {
+                "id": 17,
+                "name": "living room",
+                "image": "https://codexkw.co/7c/upload/categories/OlnUI.category_bathroom-furniture.jpg"
+            },
+            {
+                "id": 24,
+                "name": "Decor-Fit Out",
+                "image": "https://codexkw.co/7c/upload/categories/evKKS.c8_w_1_2.jpg"
+            },
+            {
+                "id": 25,
+                "name": "Decor Fit",
+                "image": "https://codexkw.co/7c/upload/categories/lndI5.elofu6.jpg"
+            }
+        ],
+        "weekly_products": [
+            {
+                "id": 43,
+                "name": "OPTCJ zaan",
+                "image": "https://codexkw.co/7c/upload/products/rXKia.5_730-2.jpg",
+                "offer": true,
+                "price": "507.000 KWD",
+                "price_offer": "2.000 KWD"
+            },
+            {
+                "id": 40,
+                "name": "Pine Wood Rectangle Board",
+                "image": "https://codexkw.co/7c/upload/products/GvFoN.WhatsApp-Image-2022-06-28-at-8.25.48-PM-1-1.jpeg",
+                "offer": "yes",
+                "price": "300.000 KWD",
+                "price_offer": "300.000 KWD"
+            },
+            {
+                "id": 39,
+                "name": "LG DVD Home Theater System",
+                "image": "https://codexkw.co/7c/upload/products/mcsOw.raw.jpg",
+                "offer": "yes",
+                "price": "900.000 KWD",
+                "price_offer": "900.000 KWD"
+            },
+            {
+                "id": 38,
+                "name": "HP SMART TANK",
+                "image": "https://codexkw.co/7c/upload/products/tAzDB.PIXMA-G660_5.jpg",
+                "offer": "yes",
+                "price": "1500.000 KWD",
+                "price_offer": "1200.000 KWD"
+            }
+        ],
+        "top_products": [
+            {
+                "id": 43,
+                "name": "OPTCJ zaan",
+                "image": "https://codexkw.co/7c/upload/products/rXKia.5_730-2.jpg",
+                "offer": "yes",
+                "price": "507.000 KWD",
+                "price_offer": "2.000 KWD"
+            },
+            {
+                "id": 40,
+                "name": "Pine Wood Rectangle Board",
+                "image": "https://codexkw.co/7c/upload/products/GvFoN.WhatsApp-Image-2022-06-28-at-8.25.48-PM-1-1.jpeg",
+                "offer": "yes",
+                "price": "300.000 KWD",
+                "price_offer": "300.000 KWD"
+            },
+            {
+                "id": 39,
+                "name": "LG DVD Home Theater System",
+                "image": "https://codexkw.co/7c/upload/products/mcsOw.raw.jpg",
+                "offer": "yes",
+                "price": "900.000 KWD",
+                "price_offer": "900.000 KWD"
+            },
+            {
+                "id": 38,
+                "name": "HP SMART TANK",
+                "image": "https://codexkw.co/7c/upload/products/tAzDB.PIXMA-G660_5.jpg",
+                "offer": "yes",
+                "price": "1500.000 KWD",
+                "price_offer": "1200.000 KWD"
+            }
+        ],
+        "ads": [
+            {
+                "name": "App Home Screen",
+                "image": "https://codexkw.co/7c/upload/ads/eEZC4.Rectangle 5.png",
+                "link": "brand",
+                "category_id": 0,
+                "product_id": 0,
+                "brand_id": 1
+            }
+        ]
+    }
+}

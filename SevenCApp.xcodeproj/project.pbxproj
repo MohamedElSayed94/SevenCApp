@@ -41,10 +41,12 @@
 		FA19F4D42AF3935300BA0952 /* AdsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4D32AF3935300BA0952 /* AdsCell.swift */; };
 		FA19F4D62AF393BD00BA0952 /* AdsLayoutSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4D52AF393BD00BA0952 /* AdsLayoutSection.swift */; };
 		FA19F4D82AF3973100BA0952 /* ProductsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4D72AF3973100BA0952 /* ProductsHeaderView.swift */; };
-		FA19F4EC2AF4655100BA0952 /* Random_Gif_Success.json in Resources */ = {isa = PBXBuildFile; fileRef = FA19F4E82AF4655100BA0952 /* Random_Gif_Success.json */; };
-		FA19F4ED2AF4655100BA0952 /* Random_Gif_Parsing_Failure.json in Resources */ = {isa = PBXBuildFile; fileRef = FA19F4E92AF4655100BA0952 /* Random_Gif_Parsing_Failure.json */; };
+		FA19F4EC2AF4655100BA0952 /* GetHomeSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = FA19F4E82AF4655100BA0952 /* GetHomeSuccess.json */; };
+		FA19F4ED2AF4655100BA0952 /* GetHomeSuccess_Parsing_Failure.json in Resources */ = {isa = PBXBuildFile; fileRef = FA19F4E92AF4655100BA0952 /* GetHomeSuccess_Parsing_Failure.json */; };
 		FA19F4EE2AF4655100BA0952 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4EA2AF4655100BA0952 /* MockURLProtocol.swift */; };
 		FA19F4EF2AF4655100BA0952 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4EB2AF4655100BA0952 /* NetworkServiceTests.swift */; };
+		FA19F4F02AF46C0700BA0952 /* GetHomeSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = FA19F4E82AF4655100BA0952 /* GetHomeSuccess.json */; };
+		FA19F4F12AF46C0A00BA0952 /* GetHomeSuccess_Parsing_Failure.json in Resources */ = {isa = PBXBuildFile; fileRef = FA19F4E92AF4655100BA0952 /* GetHomeSuccess_Parsing_Failure.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,8 +96,8 @@
 		FA19F4D52AF393BD00BA0952 /* AdsLayoutSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsLayoutSection.swift; sourceTree = "<group>"; };
 		FA19F4D72AF3973100BA0952 /* ProductsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsHeaderView.swift; sourceTree = "<group>"; };
 		FA19F4DD2AF4650C00BA0952 /* SevenCAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SevenCAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA19F4E82AF4655100BA0952 /* Random_Gif_Success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Random_Gif_Success.json; sourceTree = "<group>"; };
-		FA19F4E92AF4655100BA0952 /* Random_Gif_Parsing_Failure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Random_Gif_Parsing_Failure.json; sourceTree = "<group>"; };
+		FA19F4E82AF4655100BA0952 /* GetHomeSuccess.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetHomeSuccess.json; sourceTree = "<group>"; };
+		FA19F4E92AF4655100BA0952 /* GetHomeSuccess_Parsing_Failure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetHomeSuccess_Parsing_Failure.json; sourceTree = "<group>"; };
 		FA19F4EA2AF4655100BA0952 /* MockURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		FA19F4EB2AF4655100BA0952 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -303,8 +305,8 @@
 		FA19F4E72AF4655100BA0952 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				FA19F4E82AF4655100BA0952 /* Random_Gif_Success.json */,
-				FA19F4E92AF4655100BA0952 /* Random_Gif_Parsing_Failure.json */,
+				FA19F4E82AF4655100BA0952 /* GetHomeSuccess.json */,
+				FA19F4E92AF4655100BA0952 /* GetHomeSuccess_Parsing_Failure.json */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -399,9 +401,11 @@
 				FA19F4942AF27FE900BA0952 /* Poppins-Light.ttf in Resources */,
 				FA19F49D2AF27FE900BA0952 /* Poppins-Bold.ttf in Resources */,
 				FA19F49A2AF27FE900BA0952 /* OFL.txt in Resources */,
+				FA19F4F02AF46C0700BA0952 /* GetHomeSuccess.json in Resources */,
 				FA19F49B2AF27FE900BA0952 /* Poppins-Regular.ttf in Resources */,
 				FA19F4682AF1AEE900BA0952 /* LaunchScreen.storyboard in Resources */,
 				FA19F4652AF1AEE900BA0952 /* Assets.xcassets in Resources */,
+				FA19F4F12AF46C0A00BA0952 /* GetHomeSuccess_Parsing_Failure.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,8 +413,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA19F4EC2AF4655100BA0952 /* Random_Gif_Success.json in Resources */,
-				FA19F4ED2AF4655100BA0952 /* Random_Gif_Parsing_Failure.json in Resources */,
+				FA19F4EC2AF4655100BA0952 /* GetHomeSuccess.json in Resources */,
+				FA19F4ED2AF4655100BA0952 /* GetHomeSuccess_Parsing_Failure.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,7 +27,7 @@ final class NetworkServiceTests: XCTestCase {
         
         // Set mock data
         
-        guard let path = Bundle.main.path(forResource: "Random_Gif_Success", ofType: "json") else {
+        guard let path = Bundle.main.path(forResource: "GetHomeSuccess", ofType: "json") else {
             XCTFail()
             return
         }
@@ -40,7 +40,7 @@ final class NetworkServiceTests: XCTestCase {
         // Set expectation. Used to test async code.
         let expectation = XCTestExpectation(description: "response")
         
-        networkService.request(GetRandomEndPoint()).sink(receiveCompletion: {completion in
+        networkService.request(GetHomeEndPoint()).sink(receiveCompletion: {completion in
             switch completion {
             case .failure:
                 XCTFail()
@@ -48,10 +48,11 @@ final class NetworkServiceTests: XCTestCase {
                 expectation.fulfill()
             }
         }, receiveValue: { response in
-            XCTAssertEqual(response.data.id, "4WEUOYt2D4ud2moumf")
-            XCTAssertEqual(response.data.title, "new zealand GIF by Acorn TV")
-            XCTAssertEqual(response.data.url, "https://gph.is/2sqUqvz")
-            XCTAssertEqual(response.data.rating, "g")
+            XCTAssertEqual(response.data.categories.count, 8)
+            XCTAssertEqual(response.data.weeklyProducts.count, 4)
+            XCTAssertEqual(response.data.topProducts.count, 4)
+            XCTAssertEqual(response.data.ads.count, 1)
+            XCTAssertEqual(response.data.slider.count, 3)
             expectation.fulfill()
         })
         .store(in: &cancellabels)
@@ -72,7 +73,7 @@ final class NetworkServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "response")
         
 
-        networkService.request(GetRandomEndPoint()).sink(receiveCompletion: {completion in
+        networkService.request(GetHomeEndPoint()).sink(receiveCompletion: {completion in
             switch completion {
             case .failure(let error):
                 XCTAssertEqual(error, APIError.badResponse(statusCode: 300))
@@ -92,7 +93,7 @@ final class NetworkServiceTests: XCTestCase {
         let url = "www.test.com"
         let response = HTTPURLResponse(url: URL(string: url)!, statusCode: 200, httpVersion: nil, headerFields: nil)!
         
-        guard let path = Bundle.main.path(forResource: "Random_Gif_Parsing_Failure", ofType: "json") else {
+        guard let path = Bundle.main.path(forResource: "GetHomeSuccess_Parsing_Failure", ofType: "json") else {
             XCTFail()
             return
         }
@@ -106,7 +107,7 @@ final class NetworkServiceTests: XCTestCase {
         // Set expectation. Used to test async code.
         let expectation = XCTestExpectation(description: "response")
         
-        networkService.request(GetRandomEndPoint()).sink(receiveCompletion: {completion in
+        networkService.request(GetHomeEndPoint()).sink(receiveCompletion: {completion in
             switch completion {
             case .failure(let error):
                 
