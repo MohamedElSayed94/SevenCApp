@@ -1,8 +1,8 @@
 //
 //  EndpointProtocol.swift
-//  Giphy Picnic
+//  7CApp
 //
-//  Created by MohamedSaidZC on 27/07/2023.
+//  Created by MohamedSaidZC on 01/11/2023.
 //
 
 import Foundation
@@ -13,6 +13,7 @@ protocol EndpointProtocol {
     var url: String { get }
     var method: HttpMethod { get }
     var parameters: Dictionary<String, String> { get }
+    var headers: Dictionary<String, String> { get }
     associatedtype Model: Decodable
 }
 

@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+
+struct HomeResponseModel: Decodable {
+    let data: HomeModel
+}

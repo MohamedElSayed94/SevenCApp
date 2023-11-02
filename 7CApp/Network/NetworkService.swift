@@ -1,8 +1,8 @@
 //
 //  NetworkService.swift
-//  Giphy Picnic
+//  7CApp
 //
-//  Created by MohamedSaidZC on 27/07/2023.
+//  Created by MohamedSaidZC on 01/11/2023.
 //
 
 import Foundation
@@ -29,11 +29,13 @@ class NetworkService: NetworkServiceProtocol {
         guard let url = URL(string: endpoint.url) else {
             return Fail(error: APIError.badURL).eraseToAnyPublisher()
         }
-        // cancel unnecessary running requests
-        cancelRunningTasks()
+        
         var request = URLRequest(url: url)
         request.httpMethod = endpoint.method.rawValue
         
+        request.allHTTPHeaderFields = endpoint.headers
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
         return session.dataTaskPublisher(for: request)
             .tryMap { data, response -> Data in
                 let httpResponse = response as? HTTPURLResponse
@@ -51,7 +53,7 @@ class NetworkService: NetworkServiceProtocol {
                 
                 return data
             }
-            .decode(type: Endpoint.Model.self, decoder: JSONDecoder())
+            .decode(type: Endpoint.Model.self, decoder: decoder)
             .mapError({ error -> APIError in
                 if let error = error as? APIError {
                     return error
@@ -65,13 +67,5 @@ class NetworkService: NetworkServiceProtocol {
             .subscribe(on: DispatchQueue.global())
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
-    }
-    
-    func cancelRunningTasks() {
-        URLSession.shared.getAllTasks { tasks in
-            tasks
-                .filter { $0.state == .running }.first?
-                .cancel()
-        }
     }
 }
