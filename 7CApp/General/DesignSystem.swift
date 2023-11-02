@@ -40,7 +40,34 @@ struct DesignSystem {
     
     
 }
-
+extension DesignSystem {
+    
+    enum Images {
+        case iconSearch
+        case alert
+        case title7C
+        case yellowArrow
+        case arrowLeft
+        case addCartIcon
+        
+        var image: UIImage? {
+            switch self {
+            case .iconSearch:
+                UIImage(named: "IconSearch")
+            case .alert:
+                UIImage(named: "Alert")
+            case .title7C:
+                UIImage(named:"7CTitle")
+            case .yellowArrow:
+                UIImage(named: "yellowArrow")
+            case .arrowLeft:
+                UIImage(named: "arrow-left")
+            case .addCartIcon:
+                UIImage(named: "addCartIcon")
+            }
+        }
+    }
+}
 extension DesignSystem {
     
     enum Font {

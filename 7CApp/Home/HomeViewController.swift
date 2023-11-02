@@ -56,9 +56,9 @@ class HomeViewController: UIViewController {
     }
     
     func configureNavBar() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "IconSearch")?.withRenderingMode(.alwaysOriginal))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "Alert")?.withRenderingMode(.alwaysOriginal))
-        self.navigationItem.titleView = UIImageView(image: UIImage(named:"7CTitle")?.withRenderingMode(.alwaysOriginal))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: DesignSystem.Images.iconSearch.image?.withRenderingMode(.alwaysOriginal))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: DesignSystem.Images.alert.image?.withRenderingMode(.alwaysOriginal))
+        self.navigationItem.titleView = UIImageView(image: DesignSystem.Images.title7C.image?.withRenderingMode(.alwaysOriginal))
     }
 }
 

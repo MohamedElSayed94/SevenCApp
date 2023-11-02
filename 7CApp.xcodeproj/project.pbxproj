@@ -132,7 +132,6 @@
 				FA19F4C02AF35AF400BA0952 /* Views */,
 				FA19F4B92AF351DF00BA0952 /* Model */,
 				FA19F4B62AF351A700BA0952 /* EndPoint */,
-				FA19F4A62AF2B23600BA0952 /* CollectionLayout Sections */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -224,6 +223,7 @@
 			children = (
 				FA19F4D72AF3973100BA0952 /* ProductsHeaderView.swift */,
 				FA19F4762AF2483100BA0952 /* HeaderView.swift */,
+				FA19F4A62AF2B23600BA0952 /* CollectionLayout Sections */,
 				FA19F4A32AF2858900BA0952 /* Cells */,
 			);
 			path = Views;

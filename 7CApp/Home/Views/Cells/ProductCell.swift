@@ -50,7 +50,7 @@ class ProductCell: UICollectionViewCell {
     }()
     private var addToCartButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "addCartIcon"), for: .normal)
+        button.setImage(DesignSystem.Images.addCartIcon.image, for: .normal)
         return button
     }()
 }

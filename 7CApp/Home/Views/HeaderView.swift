@@ -18,7 +18,7 @@ class HeaderView: UICollectionReusableView {
     }()
     private var seeAllButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "arrow-left"), for: .normal)
+        button.setImage(DesignSystem.Images.arrowLeft.image, for: .normal)
         return button
     }()
     

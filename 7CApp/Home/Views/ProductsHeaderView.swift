@@ -17,7 +17,7 @@ class ProductsHeaderView: UICollectionReusableView {
     }()
     private var seeAllButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "yellowArrow"), for: .normal)
+        button.setImage(DesignSystem.Images.yellowArrow.image, for: .normal)
         button.setTitle("See all  ", for: .normal)
         button.setTitleColor(DesignSystem.Color.yellow.color, for: .normal)
         button.titleLabel?.font = DesignSystem.Font.regular12.font
