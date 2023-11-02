@@ -64,11 +64,16 @@ extension ProductCell {
         imageView.kf.setImage(with: url)
         titleLabel.text = model.name
         
-        let attributeString: NSMutableAttributedString = NSMutableAttributedString(string: model.price)
+        let attributeString: NSMutableAttributedString = NSMutableAttributedString(string: model.price.roundedPrice())
         attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSRange(location: 0, length: attributeString.length))
         priceLabel.attributedText = attributeString
-        offerPriceLabel.text = model.priceOffer
-        
+        priceStackView.addArrangedSubview(priceLabel)
+       
+        if model.offer == "yes" {
+            offerPriceLabel.text = model.priceOffer?.roundedPrice()
+            priceStackView.addArrangedSubview(offerPriceLabel)
+        }
+       
         addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
@@ -83,8 +88,6 @@ extension ProductCell {
         
         
         addSubview(priceStackView)
-        priceStackView.addArrangedSubview(priceLabel)
-        priceStackView.addArrangedSubview(offerPriceLabel)
         priceStackView.translatesAutoresizingMaskIntoConstraints = false
         priceStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4).isActive = true
         priceStackView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true

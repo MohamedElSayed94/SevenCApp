@@ -36,6 +36,7 @@
 		FA19F4C72AF363BE00BA0952 /* LoadableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4C62AF363BE00BA0952 /* LoadableProtocol.swift */; };
 		FA19F4CA2AF3643D00BA0952 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4C92AF3643C00BA0952 /* SpinnerViewController.swift */; };
 		FA19F4CD2AF376E900BA0952 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = FA19F4CC2AF376E900BA0952 /* Kingfisher */; };
+		FA19F4D02AF38E7700BA0952 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4CF2AF38E7600BA0952 /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		FA19F4C42AF361AB00BA0952 /* FailableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailableProtocol.swift; sourceTree = "<group>"; };
 		FA19F4C62AF363BE00BA0952 /* LoadableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableProtocol.swift; sourceTree = "<group>"; };
 		FA19F4C92AF3643C00BA0952 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
+		FA19F4CF2AF38E7600BA0952 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 		FA19F4782AF27B6B00BA0952 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				FA19F4CE2AF38E6700BA0952 /* Extension */,
 				FA19F4C82AF3642D00BA0952 /* Views */,
 				FA19F4C32AF3619C00BA0952 /* Protocols */,
 				FA19F4792AF27B7D00BA0952 /* DesignSystem.swift */,
@@ -229,6 +232,14 @@
 				FA19F4C92AF3643C00BA0952 /* SpinnerViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		FA19F4CE2AF38E6700BA0952 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FA19F4CF2AF38E7600BA0952 /* StringExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +343,7 @@
 				FA19F4B32AF34ED100BA0952 /* NetworkService.swift in Sources */,
 				FA19F4AC2AF2B6DA00BA0952 /* ProductLayoutSection.swift in Sources */,
 				FA19F4B52AF34ED100BA0952 /* APIError.swift in Sources */,
+				FA19F4D02AF38E7700BA0952 /* StringExtension.swift in Sources */,
 				FA19F4BF2AF3559B00BA0952 /* TokensAndKeys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
