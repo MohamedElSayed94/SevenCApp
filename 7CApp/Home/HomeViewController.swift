@@ -13,12 +13,23 @@ class HomeViewController: UIViewController {
     
     var categoriesArr = ["Office Furniture", "Chair", "Desk", "Beds", "Room"]
     
+    private var viewModel: HomeViewModelProtocol
+    // MARK: - init
+    init(viewModel: HomeViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureCollectionView()
         collectionView.reloadData()
-        self.view.backgroundColor = DesignSystem.Color.white.color
+        viewModel.fetchHome()
     }
 
 }
@@ -109,9 +120,8 @@ extension HomeViewController {
 
 extension HomeViewController {
     func generateLayout() -> UICollectionViewLayout {
-        let layout = UICollectionViewCompositionalLayout { [weak self] (sectionIndex: Int,
+        let layout = UICollectionViewCompositionalLayout { (sectionIndex: Int,
                                                                         layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
-            guard let self else {return nil}
             let sectionLayoutKind = Section.allCases[sectionIndex]
             switch (sectionLayoutKind) {
             case .topCategories:
