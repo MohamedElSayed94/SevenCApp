@@ -37,7 +37,7 @@ extension FailableProtocol where Self : UIViewController {
         self.view.addSubview(topBannerErrorView)
         topBannerErrorView.translatesAutoresizingMaskIntoConstraints = false
         
-        topBannerErrorView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 80).isActive = true
+        topBannerErrorView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 5).isActive = true
         topBannerErrorView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 10).isActive = true
         topBannerErrorView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -10).isActive = true
         topBannerErrorView.heightAnchor.constraint(equalToConstant: 40).isActive = true
