@@ -6,14 +6,16 @@
 //
 
 import UIKit
+import Combine
 
 class HomeViewController: UIViewController {
     
     private var collectionView: UICollectionView!
-    
-    var categoriesArr = ["Office Furniture", "Chair", "Desk", "Beds", "Room"]
-    
+    var topBannerErrorView: UIView = UIView()
+    var loadingViewController: UIViewController = SpinnerViewController()
     private var viewModel: HomeViewModelProtocol
+    private var cancellable: [AnyCancellable] = []
+    
     // MARK: - init
     init(viewModel: HomeViewModelProtocol) {
         self.viewModel = viewModel
@@ -30,6 +32,21 @@ class HomeViewController: UIViewController {
         configureCollectionView()
         collectionView.reloadData()
         viewModel.fetchHome()
+        viewModel.state.sink { [weak self] state in
+            guard let self else { return }
+            switch state {
+            case .initial:
+                break
+            case .loading:
+                self.showLoadingView()
+            case .failed(let error):
+                self.showError(error.localizedDescription)
+            case .loaded:
+                self.hideLoadingView()
+                self.collectionView.reloadData()
+            }
+        }
+        .store(in: &cancellable)
     }
 
 }
@@ -59,19 +76,8 @@ extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let sectionType = Section.allCases[section]
+        return viewModel.getItemsCount(section: sectionType)
         
-        switch sectionType {
-        case .topCategories:
-            return categoriesArr.count
-        case .topWideBanner:
-            return 4
-        case .weeklySelection:
-            return 4
-        case .ads:
-            return 1
-        case .topProducts:
-            return 5
-        }
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -80,34 +86,43 @@ extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if Section.allCases[indexPath.section] == .topWideBanner {
+        let sectionType = Section.allCases[indexPath.section]
+        
+        switch sectionType {
+            
+        case .categories:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(CategoryThumbnailCell.self)", for: indexPath) as? CategoryThumbnailCell else {
+                return UICollectionViewCell()
+            }
+            cell.configureUI(imageName: "WeeklySelection1", title: viewModel.model.categories[indexPath.item].name)
+            return cell
+        case .slider:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(CategoryThumbnailCell.self)", for: indexPath) as? CategoryThumbnailCell else {
                 return UICollectionViewCell()
             }
             cell.configureUI(imageName: "Rectangle5", title: "")
             return cell
-        } else if Section.allCases[indexPath.section] == .ads {
+        case .weeklySelection:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(ProductCell.self)", for: indexPath) as? ProductCell else {
+                return UICollectionViewCell()
+            }
+            let weeklyProduct = viewModel.model.weeklyProducts[indexPath.item]
+            cell.configureUI(imageName: "WeeklySelection1", title: weeklyProduct.name, isDiscounted: weeklyProduct.offer, price: weeklyProduct.price, priceOffer: weeklyProduct.priceOffer ?? "")
+            return cell
+        case .ads:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(CategoryThumbnailCell.self)", for: indexPath) as? CategoryThumbnailCell else {
                 return UICollectionViewCell()
             }
             cell.configureUI(imageName: "addBanner", title: "")
             return cell
-        } else if Section.allCases[indexPath.section] == .topCategories {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(CategoryThumbnailCell.self)", for: indexPath) as? CategoryThumbnailCell else {
-                return UICollectionViewCell()
-            }
-            cell.configureUI(imageName: "WeeklySelection1", title: categoriesArr[indexPath.item])
-            return cell
-        
-        } else {
+        case .topProducts:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(ProductCell.self)", for: indexPath) as? ProductCell else {
                 return UICollectionViewCell()
             }
-            cell.configureUI(imageName: "WeeklySelection1", title: categoriesArr[indexPath.item], isDiscounted: true, price: 100, priceOffer: 90)
+            let topProduct = viewModel.model.weeklyProducts[indexPath.item]
+            cell.configureUI(imageName: "WeeklySelection1", title: topProduct.name, isDiscounted: topProduct.offer, price: topProduct.price, priceOffer: topProduct.priceOffer ?? "")
             return cell
         }
-        
-        
     }
 }
 extension HomeViewController {
@@ -124,9 +139,9 @@ extension HomeViewController {
                                                                         layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
             let sectionLayoutKind = Section.allCases[sectionIndex]
             switch (sectionLayoutKind) {
-            case .topCategories:
+            case .categories:
                 return TopCategoriesSection()
-            case .topWideBanner:
+            case .slider:
                 return TopBannerSection()
             case .weeklySelection:
                 return ProductLayoutSection()
@@ -142,17 +157,17 @@ extension HomeViewController {
 
 extension HomeViewController {
     enum Section: CaseIterable{
-        case topCategories
-        case topWideBanner
+        case categories
+        case slider
         case weeklySelection
         case ads
         case topProducts
         
         var sectionTitle: String {
             switch self {
-            case .topCategories:
+            case .categories:
                 "7C Categories"
-            case .topWideBanner:
+            case .slider:
                 ""
             case .weeklySelection:
                 "Weekly Selection"
@@ -164,3 +179,5 @@ extension HomeViewController {
         }
     }
 }
+
+extension HomeViewController: LoadableProtocol, FailableProtocol {}

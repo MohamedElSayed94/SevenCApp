@@ -57,14 +57,14 @@ class ProductCell: UICollectionViewCell {
 
 extension ProductCell {
     
-    func configureUI(imageName: String, title: String, isDiscounted: Bool, price: Double, priceOffer: Double){
+    func configureUI(imageName: String, title: String, isDiscounted: String, price: String, priceOffer: String){
         imageView.image = UIImage(named: imageName)
         titleLabel.text = title
         
-        let attributeString: NSMutableAttributedString = NSMutableAttributedString(string: "\(price)KW")
+        let attributeString: NSMutableAttributedString = NSMutableAttributedString(string: price)
         attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSRange(location: 0, length: attributeString.length))
         priceLabel.attributedText = attributeString
-        offerPriceLabel.text = "\(priceOffer)KW"
+        offerPriceLabel.text = priceOffer
         
         addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false

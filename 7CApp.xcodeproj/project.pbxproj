@@ -31,6 +31,10 @@
 		FA19F4BB2AF3520800BA0952 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4BA2AF3520800BA0952 /* HomeModel.swift */; };
 		FA19F4BD2AF3543000BA0952 /* HomeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4BC2AF3543000BA0952 /* HomeResponseModel.swift */; };
 		FA19F4BF2AF3559B00BA0952 /* TokensAndKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4BE2AF3559B00BA0952 /* TokensAndKeys.swift */; };
+		FA19F4C22AF35F0D00BA0952 /* ViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4C12AF35F0D00BA0952 /* ViewModelState.swift */; };
+		FA19F4C52AF361AB00BA0952 /* FailableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4C42AF361AB00BA0952 /* FailableProtocol.swift */; };
+		FA19F4C72AF363BE00BA0952 /* LoadableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4C62AF363BE00BA0952 /* LoadableProtocol.swift */; };
+		FA19F4CA2AF3643D00BA0952 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4C92AF3643C00BA0952 /* SpinnerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +64,10 @@
 		FA19F4BA2AF3520800BA0952 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		FA19F4BC2AF3543000BA0952 /* HomeResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResponseModel.swift; sourceTree = "<group>"; };
 		FA19F4BE2AF3559B00BA0952 /* TokensAndKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensAndKeys.swift; sourceTree = "<group>"; };
+		FA19F4C12AF35F0D00BA0952 /* ViewModelState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelState.swift; sourceTree = "<group>"; };
+		FA19F4C42AF361AB00BA0952 /* FailableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailableProtocol.swift; sourceTree = "<group>"; };
+		FA19F4C62AF363BE00BA0952 /* LoadableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableProtocol.swift; sourceTree = "<group>"; };
+		FA19F4C92AF3643C00BA0952 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,9 +128,12 @@
 		FA19F4782AF27B6B00BA0952 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				FA19F4C82AF3642D00BA0952 /* Views */,
+				FA19F4C32AF3619C00BA0952 /* Protocols */,
 				FA19F4792AF27B7D00BA0952 /* DesignSystem.swift */,
 				FA19F4BE2AF3559B00BA0952 /* TokensAndKeys.swift */,
 				FA19F47B2AF27FDD00BA0952 /* Fonts */,
+				FA19F4C12AF35F0D00BA0952 /* ViewModelState.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -201,6 +212,23 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		FA19F4C32AF3619C00BA0952 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FA19F4C42AF361AB00BA0952 /* FailableProtocol.swift */,
+				FA19F4C62AF363BE00BA0952 /* LoadableProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		FA19F4C82AF3642D00BA0952 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA19F4C92AF3643C00BA0952 /* SpinnerViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -275,11 +303,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA19F4CA2AF3643D00BA0952 /* SpinnerViewController.swift in Sources */,
 				FA19F45C2AF1AEE600BA0952 /* AppDelegate.swift in Sources */,
 				FA19F4AE2AF34D8900BA0952 /* HomeViewModel.swift in Sources */,
 				FA19F4B42AF34ED100BA0952 /* EndpointProtocol.swift in Sources */,
 				FA19F4772AF2483100BA0952 /* HeaderView.swift in Sources */,
 				FA19F4BD2AF3543000BA0952 /* HomeResponseModel.swift in Sources */,
+				FA19F4C22AF35F0D00BA0952 /* ViewModelState.swift in Sources */,
 				FA19F4BB2AF3520800BA0952 /* HomeModel.swift in Sources */,
 				FA19F4732AF1B64300BA0952 /* CategoryThumbnailCell.swift in Sources */,
 				FA19F4A82AF2B26100BA0952 /* TopCategoriesSection.swift in Sources */,
@@ -289,6 +319,8 @@
 				FA19F4AA2AF2B63A00BA0952 /* TopBannerSection.swift in Sources */,
 				FA19F4A52AF28C5C00BA0952 /* ProductCell.swift in Sources */,
 				FA19F4712AF1B25E00BA0952 /* HomeViewController.swift in Sources */,
+				FA19F4C72AF363BE00BA0952 /* LoadableProtocol.swift in Sources */,
+				FA19F4C52AF361AB00BA0952 /* FailableProtocol.swift in Sources */,
 				FA19F4B32AF34ED100BA0952 /* NetworkService.swift in Sources */,
 				FA19F4AC2AF2B6DA00BA0952 /* ProductLayoutSection.swift in Sources */,
 				FA19F4B52AF34ED100BA0952 /* APIError.swift in Sources */,
