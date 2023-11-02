@@ -17,6 +17,7 @@ struct DesignSystem {
         case black3
         case yellow
         case lightGreyMask
+        case navBarShadow
         
         var color: UIColor {
             switch self {
@@ -34,6 +35,8 @@ struct DesignSystem {
             case .lightGreyMask:
                 return UIColor(white: 0, alpha: 0.3)
 
+            case .navBarShadow:
+                return UIColor(red: 0, green: 0, blue: 0, alpha: 0.25)
             }
         }
     }

@@ -13,7 +13,7 @@ class ProductLayoutSection: NSCollectionLayoutSection {
         
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 15, trailing: 5)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 8, bottom: 15, trailing: 8)
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(256))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 2)
         let headerSize = NSCollectionLayoutSize(
@@ -24,7 +24,9 @@ class ProductLayoutSection: NSCollectionLayoutSection {
             elementKind: UICollectionView.elementKindSectionHeader,
             alignment: .top)
         sectionHeader.pinToVisibleBounds = true
+        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 5, trailing: 16)
         self.init(group: group)
+        
         boundarySupplementaryItems = [sectionHeader]
     }
     

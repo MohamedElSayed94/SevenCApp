@@ -15,7 +15,7 @@ class AdsLayoutSection: NSCollectionLayoutSection {
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(200))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 1)
-        group.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 0, trailing: 5)
+        group.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 24, bottom: 40, trailing: 24)
         
         self.init(group: group)
         orthogonalScrollingBehavior = .groupPagingCentered

@@ -38,6 +38,7 @@ class ProductCell: UICollectionViewCell {
         label.textColor = DesignSystem.Color.pink.color
         label.textAlignment = .left
         label.numberOfLines = 1
+        label.adjustsFontSizeToFitWidth = true
         return label
     }()
     private var offerPriceLabel: UILabel = {
@@ -46,6 +47,7 @@ class ProductCell: UICollectionViewCell {
         label.textColor = DesignSystem.Color.black1.color
         label.textAlignment = .left
         label.numberOfLines = 1
+        label.adjustsFontSizeToFitWidth = true
         return label
     }()
     private var addToCartButton: UIButton = {

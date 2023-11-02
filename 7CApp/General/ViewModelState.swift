@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ViewModelState {
+enum ViewModelState: Equatable {
     case initial
     case loading
     case failed(APIError)

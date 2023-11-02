@@ -131,7 +131,7 @@
 				FA19F4AD2AF34D8900BA0952 /* HomeViewModel.swift */,
 				FA19F4C02AF35AF400BA0952 /* Views */,
 				FA19F4B92AF351DF00BA0952 /* Model */,
-				FA19F4B62AF351A700BA0952 /* EndPoint */,
+				FA19F4B62AF351A700BA0952 /* EndPoints */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -201,12 +201,12 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		FA19F4B62AF351A700BA0952 /* EndPoint */ = {
+		FA19F4B62AF351A700BA0952 /* EndPoints */ = {
 			isa = PBXGroup;
 			children = (
 				FA19F4B72AF351BD00BA0952 /* GetHomeEndPoint.swift */,
 			);
-			path = EndPoint;
+			path = EndPoints;
 			sourceTree = "<group>";
 		};
 		FA19F4B92AF351DF00BA0952 /* Model */ = {

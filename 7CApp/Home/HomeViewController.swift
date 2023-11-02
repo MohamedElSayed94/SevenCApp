@@ -59,6 +59,10 @@ class HomeViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: DesignSystem.Images.iconSearch.image?.withRenderingMode(.alwaysOriginal))
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: DesignSystem.Images.alert.image?.withRenderingMode(.alwaysOriginal))
         self.navigationItem.titleView = UIImageView(image: DesignSystem.Images.title7C.image?.withRenderingMode(.alwaysOriginal))
+        self.navigationController?.navigationBar.layer.shadowColor = DesignSystem.Color.navBarShadow.color.cgColor
+        self.navigationController?.navigationBar.layer.shadowOpacity = 0.7
+        self.navigationController?.navigationBar.layer.shadowOffset = CGSize.zero
+        self.navigationController?.navigationBar.layer.shadowRadius = 3
     }
 }
 
@@ -100,7 +104,7 @@ extension HomeViewController: UICollectionViewDataSource {
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return Section.allCases.count
+        return viewModel.state.value == .loaded ? Section.allCases.count : 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
