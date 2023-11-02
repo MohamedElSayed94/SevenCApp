@@ -80,6 +80,8 @@ extension ProductCell {
         imageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         imageView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         imageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.78).isActive = true
+        imageView.layer.cornerRadius = 8
+        imageView.layer.masksToBounds = true
         addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8).isActive = true

@@ -32,7 +32,8 @@ extension AdsCell {
         imageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         imageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         imageView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-
+        layer.cornerRadius = 8
+        layer.masksToBounds = true
     }
 }
 

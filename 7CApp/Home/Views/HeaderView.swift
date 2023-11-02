@@ -44,7 +44,7 @@ extension HeaderView {
         NSLayoutConstraint.activate([
             label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: inset),
             label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -inset),
-            label.topAnchor.constraint(equalTo: topAnchor, constant: inset),
+            label.topAnchor.constraint(equalTo: topAnchor, constant: 30),
             label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -inset)
         ])
         

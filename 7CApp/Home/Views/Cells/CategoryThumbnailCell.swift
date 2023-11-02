@@ -23,6 +23,12 @@ class CategoryThumbnailCell: UICollectionViewCell {
         label.numberOfLines = 2
         return label
     }()
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        layer.cornerRadius = 8
+        layer.masksToBounds = true
+    }
 }
 
 // MARK: - configureUI
@@ -40,6 +46,15 @@ extension CategoryThumbnailCell {
         imageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         imageView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         
+        let maskView = UIView()
+        maskView.backgroundColor = DesignSystem.Color.lightGreyMask.color
+        addSubview(maskView)
+        maskView.translatesAutoresizingMaskIntoConstraints = false
+        maskView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        maskView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        maskView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        maskView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        
         addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
@@ -48,6 +63,8 @@ extension CategoryThumbnailCell {
         titleLabel.bottomAnchor.constraint(greaterThanOrEqualTo: bottomAnchor).isActive = true
         titleLabel.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: 20).isActive = true
         titleLabel.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: 20).isActive = true
+        layer.cornerRadius = 8
+        layer.masksToBounds = true
     }
 }
 

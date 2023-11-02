@@ -25,7 +25,7 @@ class TopCategoriesSection: NSCollectionLayoutSection {
             elementKind: UICollectionView.elementKindSectionHeader,
             alignment: .top)
         sectionHeader.pinToVisibleBounds = true
-        
+        sectionHeader.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 0, bottom: 0, trailing: 0)
         self.init(group: group)
         boundarySupplementaryItems = [sectionHeader]
         orthogonalScrollingBehavior = .continuous

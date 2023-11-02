@@ -16,6 +16,7 @@ struct DesignSystem {
         case pink
         case black3
         case yellow
+        case lightGreyMask
         
         var color: UIColor {
             switch self {
@@ -29,6 +30,9 @@ struct DesignSystem {
                 return UIColor(red: 96/255, green: 96/255, blue: 96/255, alpha: 1)
             case .yellow:
                 return UIColor(red: 226/255, green: 149/255, blue: 71/255, alpha: 1)
+
+            case .lightGreyMask:
+                return UIColor(white: 0, alpha: 0.3)
 
             }
         }
