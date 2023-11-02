@@ -41,6 +41,7 @@ class HomeViewController: UIViewController {
                 self.showLoadingView()
             case .failed(let error):
                 self.showError(error.localizedDescription)
+                self.hideLoadingView()
             case .loaded:
                 self.hideLoadingView()
                 self.collectionView.reloadData()
@@ -58,10 +59,18 @@ extension HomeViewController {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: generateLayout())
         collectionView.register(CategoryThumbnailCell.self, forCellWithReuseIdentifier: "\(CategoryThumbnailCell.self)")
         collectionView.register(ProductCell.self, forCellWithReuseIdentifier: "\(ProductCell.self)")
+        collectionView.register(SliderCell.self, forCellWithReuseIdentifier: "\(SliderCell.self)")
+        collectionView.register(AdsCell.self, forCellWithReuseIdentifier: "\(AdsCell.self)")
+        
         collectionView.register(
             HeaderView.self,
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
             withReuseIdentifier: "\(HeaderView.self)")
+        collectionView.register(
+            ProductsHeaderView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: "\(ProductsHeaderView.self)")
+        
         view.addSubview(collectionView)
         collectionView.dataSource = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -98,7 +107,7 @@ extension HomeViewController: UICollectionViewDataSource {
             cell.configureUI(model: category)
             return cell
         case .slider:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(CategoryThumbnailCell.self)", for: indexPath) as? CategoryThumbnailCell else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(SliderCell.self)", for: indexPath) as? SliderCell else {
                 return UICollectionViewCell()
             }
             let slider = viewModel.model.slider[indexPath.item]
@@ -112,7 +121,7 @@ extension HomeViewController: UICollectionViewDataSource {
             cell.configureUI(model: weeklyProduct)
             return cell
         case .ads:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(CategoryThumbnailCell.self)", for: indexPath) as? CategoryThumbnailCell else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(AdsCell.self)", for: indexPath) as? AdsCell else {
                 return UICollectionViewCell()
             }
             let ads = viewModel.model.ads[indexPath.item]
@@ -130,9 +139,17 @@ extension HomeViewController: UICollectionViewDataSource {
 }
 extension HomeViewController {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "\(HeaderView.self)", for: indexPath) as? HeaderView else { return UICollectionReusableView() }
-        header.label.text = Section.allCases[indexPath.section].sectionTitle
-        return header
+        let sectionType = Section.allCases[indexPath.section]
+        if sectionType == .topProducts || sectionType == .weeklySelection {
+            guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "\(ProductsHeaderView.self)", for: indexPath) as? ProductsHeaderView else { return UICollectionReusableView() }
+            header.label.text = Section.allCases[indexPath.section].sectionTitle
+            return header
+        } else {
+            guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "\(HeaderView.self)", for: indexPath) as? HeaderView else { return UICollectionReusableView() }
+            header.label.text = Section.allCases[indexPath.section].sectionTitle
+            return header
+        }
+        
     }
 }
 
@@ -145,11 +162,11 @@ extension HomeViewController {
             case .categories:
                 return TopCategoriesSection()
             case .slider:
-                return TopBannerSection()
+                return SliderLayoutSection()
             case .weeklySelection:
                 return ProductLayoutSection()
             case .ads:
-                return TopBannerSection()
+                return AdsLayoutSection()
             case .topProducts:
                 return ProductLayoutSection()
             }

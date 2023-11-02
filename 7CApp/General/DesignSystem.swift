@@ -15,6 +15,7 @@ struct DesignSystem {
         case black1
         case pink
         case black3
+        case yellow
         
         var color: UIColor {
             switch self {
@@ -26,6 +27,9 @@ struct DesignSystem {
                 return UIColor(red: 222/255, green: 7/255, blue: 7/255, alpha: 0.41)
             case .black3:
                 return UIColor(red: 96/255, green: 96/255, blue: 96/255, alpha: 1)
+            case .yellow:
+                return UIColor(red: 226/255, green: 149/255, blue: 71/255, alpha: 1)
+
             }
         }
     }
@@ -39,6 +43,7 @@ extension DesignSystem {
         case bold13
         case bold14
         case regular14
+        case regular12
         
         var font: UIFont {
             switch self {
@@ -48,6 +53,8 @@ extension DesignSystem {
                 return UIFont(name: "Poppins-Bold", size: 14) ?? .systemFont(ofSize: 14)
             case .regular14:
                 return UIFont(name: "Poppins-Regular", size: 14) ?? .systemFont(ofSize: 14)
+            case .regular12:
+                return UIFont(name: "Poppins-Regular", size: 12) ?? .systemFont(ofSize: 12)
             }
         }
     }

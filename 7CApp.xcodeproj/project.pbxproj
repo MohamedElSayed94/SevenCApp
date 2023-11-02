@@ -21,7 +21,7 @@
 		FA19F49D2AF27FE900BA0952 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA19F48A2AF27FE900BA0952 /* Poppins-Bold.ttf */; };
 		FA19F4A52AF28C5C00BA0952 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4A42AF28C5C00BA0952 /* ProductCell.swift */; };
 		FA19F4A82AF2B26100BA0952 /* TopCategoriesSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4A72AF2B26100BA0952 /* TopCategoriesSection.swift */; };
-		FA19F4AA2AF2B63A00BA0952 /* TopBannerSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4A92AF2B63A00BA0952 /* TopBannerSection.swift */; };
+		FA19F4AA2AF2B63A00BA0952 /* SliderLayoutSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4A92AF2B63A00BA0952 /* SliderLayoutSection.swift */; };
 		FA19F4AC2AF2B6DA00BA0952 /* ProductLayoutSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4AB2AF2B6DA00BA0952 /* ProductLayoutSection.swift */; };
 		FA19F4AE2AF34D8900BA0952 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4AD2AF34D8900BA0952 /* HomeViewModel.swift */; };
 		FA19F4B32AF34ED100BA0952 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4B02AF34ED100BA0952 /* NetworkService.swift */; };
@@ -37,6 +37,10 @@
 		FA19F4CA2AF3643D00BA0952 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4C92AF3643C00BA0952 /* SpinnerViewController.swift */; };
 		FA19F4CD2AF376E900BA0952 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = FA19F4CC2AF376E900BA0952 /* Kingfisher */; };
 		FA19F4D02AF38E7700BA0952 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4CF2AF38E7600BA0952 /* StringExtension.swift */; };
+		FA19F4D22AF3917600BA0952 /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4D12AF3917600BA0952 /* SliderCell.swift */; };
+		FA19F4D42AF3935300BA0952 /* AdsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4D32AF3935300BA0952 /* AdsCell.swift */; };
+		FA19F4D62AF393BD00BA0952 /* AdsLayoutSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4D52AF393BD00BA0952 /* AdsLayoutSection.swift */; };
+		FA19F4D82AF3973100BA0952 /* ProductsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4D72AF3973100BA0952 /* ProductsHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,7 +60,7 @@
 		FA19F48A2AF27FE900BA0952 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		FA19F4A42AF28C5C00BA0952 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		FA19F4A72AF2B26100BA0952 /* TopCategoriesSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCategoriesSection.swift; sourceTree = "<group>"; };
-		FA19F4A92AF2B63A00BA0952 /* TopBannerSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBannerSection.swift; sourceTree = "<group>"; };
+		FA19F4A92AF2B63A00BA0952 /* SliderLayoutSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderLayoutSection.swift; sourceTree = "<group>"; };
 		FA19F4AB2AF2B6DA00BA0952 /* ProductLayoutSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductLayoutSection.swift; sourceTree = "<group>"; };
 		FA19F4AD2AF34D8900BA0952 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		FA19F4B02AF34ED100BA0952 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -71,6 +75,10 @@
 		FA19F4C62AF363BE00BA0952 /* LoadableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableProtocol.swift; sourceTree = "<group>"; };
 		FA19F4C92AF3643C00BA0952 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		FA19F4CF2AF38E7600BA0952 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		FA19F4D12AF3917600BA0952 /* SliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
+		FA19F4D32AF3935300BA0952 /* AdsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsCell.swift; sourceTree = "<group>"; };
+		FA19F4D52AF393BD00BA0952 /* AdsLayoutSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsLayoutSection.swift; sourceTree = "<group>"; };
+		FA19F4D72AF3973100BA0952 /* ProductsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +175,8 @@
 			children = (
 				FA19F4722AF1B64300BA0952 /* CategoryThumbnailCell.swift */,
 				FA19F4A42AF28C5C00BA0952 /* ProductCell.swift */,
+				FA19F4D12AF3917600BA0952 /* SliderCell.swift */,
+				FA19F4D32AF3935300BA0952 /* AdsCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -175,8 +185,9 @@
 			isa = PBXGroup;
 			children = (
 				FA19F4A72AF2B26100BA0952 /* TopCategoriesSection.swift */,
-				FA19F4A92AF2B63A00BA0952 /* TopBannerSection.swift */,
+				FA19F4A92AF2B63A00BA0952 /* SliderLayoutSection.swift */,
 				FA19F4AB2AF2B6DA00BA0952 /* ProductLayoutSection.swift */,
+				FA19F4D52AF393BD00BA0952 /* AdsLayoutSection.swift */,
 			);
 			path = "CollectionLayout Sections";
 			sourceTree = "<group>";
@@ -211,6 +222,7 @@
 		FA19F4C02AF35AF400BA0952 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FA19F4D72AF3973100BA0952 /* ProductsHeaderView.swift */,
 				FA19F4762AF2483100BA0952 /* HeaderView.swift */,
 				FA19F4A32AF2858900BA0952 /* Cells */,
 			);
@@ -322,9 +334,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA19F4D42AF3935300BA0952 /* AdsCell.swift in Sources */,
 				FA19F4CA2AF3643D00BA0952 /* SpinnerViewController.swift in Sources */,
 				FA19F45C2AF1AEE600BA0952 /* AppDelegate.swift in Sources */,
 				FA19F4AE2AF34D8900BA0952 /* HomeViewModel.swift in Sources */,
+				FA19F4D82AF3973100BA0952 /* ProductsHeaderView.swift in Sources */,
 				FA19F4B42AF34ED100BA0952 /* EndpointProtocol.swift in Sources */,
 				FA19F4772AF2483100BA0952 /* HeaderView.swift in Sources */,
 				FA19F4BD2AF3543000BA0952 /* HomeResponseModel.swift in Sources */,
@@ -335,7 +349,7 @@
 				FA19F45E2AF1AEE600BA0952 /* SceneDelegate.swift in Sources */,
 				FA19F4B82AF351BD00BA0952 /* GetHomeEndPoint.swift in Sources */,
 				FA19F47A2AF27B7D00BA0952 /* DesignSystem.swift in Sources */,
-				FA19F4AA2AF2B63A00BA0952 /* TopBannerSection.swift in Sources */,
+				FA19F4AA2AF2B63A00BA0952 /* SliderLayoutSection.swift in Sources */,
 				FA19F4A52AF28C5C00BA0952 /* ProductCell.swift in Sources */,
 				FA19F4712AF1B25E00BA0952 /* HomeViewController.swift in Sources */,
 				FA19F4C72AF363BE00BA0952 /* LoadableProtocol.swift in Sources */,
@@ -344,6 +358,8 @@
 				FA19F4AC2AF2B6DA00BA0952 /* ProductLayoutSection.swift in Sources */,
 				FA19F4B52AF34ED100BA0952 /* APIError.swift in Sources */,
 				FA19F4D02AF38E7700BA0952 /* StringExtension.swift in Sources */,
+				FA19F4D22AF3917600BA0952 /* SliderCell.swift in Sources */,
+				FA19F4D62AF393BD00BA0952 /* AdsLayoutSection.swift in Sources */,
 				FA19F4BF2AF3559B00BA0952 /* TokensAndKeys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,13 +1,13 @@
 //
-//  TopBannerSection.swift
+//  AdsLayoutSection.swift
 //  7CApp
 //
-//  Created by Mohamed Elsayed on 01/11/2023.
+//  Created by Mohamed Elsayed on 02/11/2023.
 //
 
 import UIKit
 
-class TopBannerSection: NSCollectionLayoutSection {
+class AdsLayoutSection: NSCollectionLayoutSection {
     
     convenience init() {
         
@@ -15,10 +15,9 @@ class TopBannerSection: NSCollectionLayoutSection {
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(200))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 1)
-        group.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+        group.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 0, trailing: 5)
         
         self.init(group: group)
-        contentInsets = .init(top: 24, leading: 0, bottom: 0, trailing: 0)
         orthogonalScrollingBehavior = .groupPagingCentered
     }
     
