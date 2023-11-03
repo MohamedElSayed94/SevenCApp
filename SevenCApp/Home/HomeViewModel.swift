@@ -41,8 +41,8 @@ class HomeViewModel: HomeViewModelProtocol {
             }
         } receiveValue: { [weak self] response in
             guard let self else { return }
-            state.send(.loaded)
             self.model = response.data
+            state.send(.loaded)
         }
         .store(in: &cancellable)
 

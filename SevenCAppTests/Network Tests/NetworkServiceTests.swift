@@ -21,7 +21,7 @@ final class NetworkServiceTests: XCTestCase {
         urlSession = URLSession(configuration: configuration)
     }
     
-    func testGetRandomGifSuccess() throws {
+    func testGetHomeSuccess() throws {
         // NetworkService. Injected with custom url session for mocking
         let networkService = NetworkService(urlSession: urlSession)
         
@@ -59,7 +59,7 @@ final class NetworkServiceTests: XCTestCase {
         wait(for: [expectation], timeout: 10)
     }
     
-    func testGetRandomGifFailureBadResponse() throws {
+    func testGetHomeFailureBadResponse() throws {
         // NetworkService. Injected with custom url session for mocking
         let networkService = NetworkService(urlSession: urlSession)
         let url = "www.test.com"
@@ -87,7 +87,7 @@ final class NetworkServiceTests: XCTestCase {
         wait(for: [expectation], timeout: 10)
     }
     
-    func testGetRandomGifParsingError() throws {
+    func testGetHomeParsingError() throws {
         // NetworkService. Injected with custom url session for mocking
         let networkService = NetworkService(urlSession: urlSession)
         let url = "www.test.com"

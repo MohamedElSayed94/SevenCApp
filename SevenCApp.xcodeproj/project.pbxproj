@@ -47,6 +47,7 @@
 		FA19F4EF2AF4655100BA0952 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4EB2AF4655100BA0952 /* NetworkServiceTests.swift */; };
 		FA19F4F02AF46C0700BA0952 /* GetHomeSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = FA19F4E82AF4655100BA0952 /* GetHomeSuccess.json */; };
 		FA19F4F12AF46C0A00BA0952 /* GetHomeSuccess_Parsing_Failure.json in Resources */ = {isa = PBXBuildFile; fileRef = FA19F4E92AF4655100BA0952 /* GetHomeSuccess_Parsing_Failure.json */; };
+		FA19F4F42AF4DE4E00BA0952 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA19F4F32AF4DE4E00BA0952 /* HomeViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		FA19F4E92AF4655100BA0952 /* GetHomeSuccess_Parsing_Failure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetHomeSuccess_Parsing_Failure.json; sourceTree = "<group>"; };
 		FA19F4EA2AF4655100BA0952 /* MockURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		FA19F4EB2AF4655100BA0952 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
+		FA19F4F32AF4DE4E00BA0952 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +289,7 @@
 		FA19F4DE2AF4650D00BA0952 /* SevenCAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				FA19F4F22AF4DE2C00BA0952 /* HomeViewModelTests */,
 				FA19F4E62AF4655100BA0952 /* Network Tests */,
 			);
 			path = SevenCAppTests;
@@ -309,6 +312,14 @@
 				FA19F4E92AF4655100BA0952 /* GetHomeSuccess_Parsing_Failure.json */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		FA19F4F22AF4DE2C00BA0952 /* HomeViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA19F4F32AF4DE4E00BA0952 /* HomeViewModelTests.swift */,
+			);
+			path = HomeViewModelTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -461,6 +472,7 @@
 			files = (
 				FA19F4EF2AF4655100BA0952 /* NetworkServiceTests.swift in Sources */,
 				FA19F4EE2AF4655100BA0952 /* MockURLProtocol.swift in Sources */,
+				FA19F4F42AF4DE4E00BA0952 /* HomeViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
