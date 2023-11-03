@@ -28,12 +28,11 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.backgroundColor = .white
         configureCollectionView()
-        collectionView.reloadData()
-        viewModel.fetchHome()
         configureStateListner()
         configureNavBar()
+        viewModel.fetchHome()
     }
     
     func configureStateListner() {
@@ -156,11 +155,11 @@ extension HomeViewController {
         let sectionType = Section.allCases[indexPath.section]
         if sectionType == .topProducts || sectionType == .weeklySelection {
             guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "\(ProductsHeaderView.self)", for: indexPath) as? ProductsHeaderView else { return UICollectionReusableView() }
-            header.label.text = Section.allCases[indexPath.section].sectionTitle
+            header.label.text = sectionType.sectionTitle
             return header
         } else {
             guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "\(HeaderView.self)", for: indexPath) as? HeaderView else { return UICollectionReusableView() }
-            header.label.text = Section.allCases[indexPath.section].sectionTitle
+            header.label.text = sectionType.sectionTitle
             return header
         }
         
