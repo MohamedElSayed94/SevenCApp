@@ -13,7 +13,7 @@ In This Repo:
 Screens:
 iPhone 15 Pro, iPhone SE
 <div>
-  <img src='https://github.com/MohamedElSayed94/SevenCApp/assets/34343211/c79cd1d2-e850-465f-8ab5-6e90bf970069' width='200'> 
+  <img src='https://github.com/MohamedElSayed94/SevenCApp/assets/34343211/193652cb-5e8f-404d-ab0c-cedcdc9896ca' width='200'> 
   <span> </span>
-  <img src='https://github.com/MohamedElSayed94/SevenCApp/assets/34343211/c911c02d-2cc1-4d85-9439-536438f5765b' width='200'>
+  <img src='https://github.com/MohamedElSayed94/SevenCApp/assets/34343211/57fb53bc-1250-41f3-92d3-a623cc5c7b6d' width='200'>
 </div>
