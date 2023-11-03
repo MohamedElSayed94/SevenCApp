@@ -1,6 +1,6 @@
 //
 //  NetworkServiceTests.swift
-//  GiphyPicnicTests
+//  SevenCApp
 //
 //  Created by MohamedSaidZC on 03/11/2023.
 //
