@@ -9,7 +9,7 @@ import UIKit
 
 
 class HeaderView: UICollectionReusableView {
-    
+    // MARK: - View Component
     let label: UILabel = {
         let label = UILabel()
         label.font = DesignSystem.Font.bold13.font
@@ -31,7 +31,7 @@ class HeaderView: UICollectionReusableView {
         fatalError()
     }
 }
-
+// MARK: - configureUI
 extension HeaderView {
     func configure() {
         backgroundColor = .systemBackground

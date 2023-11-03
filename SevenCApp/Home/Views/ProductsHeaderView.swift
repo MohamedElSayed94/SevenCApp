@@ -8,7 +8,7 @@
 import UIKit
 
 class ProductsHeaderView: UICollectionReusableView {
-    
+    // MARK: - View Component
     let label: UILabel = {
         let label = UILabel()
         label.font = DesignSystem.Font.bold13.font
@@ -34,7 +34,7 @@ class ProductsHeaderView: UICollectionReusableView {
         fatalError()
     }
 }
-
+// MARK: - configureUI
 extension ProductsHeaderView {
     func configure() {
         backgroundColor = .systemBackground

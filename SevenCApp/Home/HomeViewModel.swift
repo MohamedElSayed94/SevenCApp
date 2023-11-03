@@ -15,7 +15,7 @@ protocol HomeViewModelProtocol {
 }
 
 class HomeViewModel: HomeViewModelProtocol {
-    
+    //MARK: - variable
     let service: NetworkServiceProtocol
     var state = CurrentValueSubject<ViewModelState, Never>(.initial)
     var model = HomeModel()
@@ -25,7 +25,7 @@ class HomeViewModel: HomeViewModelProtocol {
         self.service = networkService
         
     }
-    
+    //MARK: - fetchHome
     func fetchHome() {
         let endPoint = GetHomeEndPoint()
         state.send(.loading)
@@ -47,7 +47,7 @@ class HomeViewModel: HomeViewModelProtocol {
         .store(in: &cancellable)
 
     }
-    
+    //MARK: - getItemsCount per Section
     func getItemsCount(section: HomeViewController.Section) -> Int {
         switch section {
         case .categories:

@@ -9,7 +9,7 @@ import UIKit
 
 struct DesignSystem {
     
-    
+    // MARK: - Color
     enum Color {
         case white
         case black1
@@ -43,6 +43,7 @@ struct DesignSystem {
     
     
 }
+// MARK: - Images
 extension DesignSystem {
     
     enum Images {
@@ -71,6 +72,7 @@ extension DesignSystem {
         }
     }
 }
+// MARK: - Font
 extension DesignSystem {
     
     enum Font {

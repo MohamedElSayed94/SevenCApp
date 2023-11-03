@@ -10,6 +10,7 @@ import Combine
 
 class HomeViewController: UIViewController {
     
+    // MARK: - Variables
     private var collectionView: UICollectionView!
     var topBannerErrorView: UIView = UIView()
     var loadingViewController: UIViewController = SpinnerViewController()
@@ -25,7 +26,7 @@ class HomeViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
@@ -65,7 +66,7 @@ class HomeViewController: UIViewController {
     }
 }
 
-
+    // MARK: - configureCollectionView
 extension HomeViewController {
     
     private func configureCollectionView() {
@@ -93,7 +94,7 @@ extension HomeViewController {
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
 }
-
+// MARK: - CollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -150,6 +151,7 @@ extension HomeViewController: UICollectionViewDataSource {
         }
     }
 }
+// MARK: - viewForSupplementaryElement
 extension HomeViewController {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let sectionType = Section.allCases[indexPath.section]
@@ -165,7 +167,7 @@ extension HomeViewController {
         
     }
 }
-
+// MARK: - generate Compositional Layout
 extension HomeViewController {
     func generateLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { (sectionIndex: Int,
@@ -187,7 +189,7 @@ extension HomeViewController {
         return layout
     }
 }
-
+// MARK: - Sections
 extension HomeViewController {
     enum Section: CaseIterable{
         case categories
@@ -212,5 +214,5 @@ extension HomeViewController {
         }
     }
 }
-
+// MARK: - LoadableProtocol, FailableProtocol
 extension HomeViewController: LoadableProtocol, FailableProtocol {}
