@@ -17,6 +17,7 @@ class TopCategoriesSection: NSCollectionLayoutSection {
         item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
         let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(117), heightDimension: .absolute(80))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 1)
+        group.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
         let headerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .estimated(44))
@@ -28,7 +29,7 @@ class TopCategoriesSection: NSCollectionLayoutSection {
         self.init(group: group)
         boundarySupplementaryItems = [sectionHeader]
         orthogonalScrollingBehavior = .continuous
-        contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+        
     }
     
 }
